@@ -55,7 +55,7 @@ class Predio extends Controller
                    ->join('vereda', 'idvereda', '=', 'vereda.id')
                   // ->join('tipodocumento', 'idtipodocumento', '=', 'tipodocumento.id')
                    ->select('caja.numero as cajanum', 'carpeta.numero as carnum', 'predio.id as iden',
-                    'predio.nombre as nompre', 'predio.numero as numpre', 'titular.cedula as titced',
+                    'predio.nombre as nompre', 'predio.numero as numpre', 'predio.archivo', 'titular.cedula as titced',
                      'titular.nombres as titnom',
                     'titular.apellidos as titape', 'sucesor.cedula as suced', 
                     'sucesor.nombres as sunom', 'sucesor.apellidos as suape',
@@ -64,5 +64,11 @@ class Predio extends Controller
         //$vereda=Veredas::all();
        return view('predio.vistitulos', compact('tit'));
     } 
+
+    public function descarga($file_name){//sirve para descargar un archivo 
+        $file_path = public_path('pdf/'.$file_name);
+        return response()->download($file_path);
+    }
+    
 
 }

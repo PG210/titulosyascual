@@ -8,6 +8,7 @@ use App\Http\Controllers\datos\Vereda;
 use App\Http\Controllers\datos\Predio;
 use App\Http\Controllers\datos\Carpeta;
 use App\Http\Controllers\datos\Caja;
+use App\Http\Controllers\Buscar;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +27,12 @@ Route::get('/', function () {
 });
 //registro titulares
 Route::get('titulos/registro/titulares', [Titulares::class, 'index'])->name('titular');
+//buscar titular
+Route::get('titulos/titulares/busqueda', [Buscar::class, 'index'])->name('busqueda');
+//buscar titular
+Route::post('titulos/titulares/busqueda', [Buscar::class, 'bustitular'])->name('bus');
+//buscar sucesor
+//Route::post('titulos/sucesores/busqueda', [Buscar::class, 'bussucesor'])->name('busucesor');
 //registro sucesor
 Route::get('titulos/registro/sucesores', [Sucesor::class, 'index'])->name('sucesor');
 //registro vereda
@@ -50,6 +57,8 @@ Route::post('titulos/registro/carpeta/formulario', [Carpeta::class, 'registro'])
 Route::post('titulos/registro/caja/formulario', [Caja::class, 'registro'])->name('regiscaja');
 //visualizar titulos
 Route::get('titulos/visualizar/predios', [Predio::class, 'visualizar'])->name('titulos');
+//Descargar titulos
+Route::get('titulos/visualizar/predios/descarga/archivo/{file}', [Predio::class, 'descarga'])->name('descargas');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

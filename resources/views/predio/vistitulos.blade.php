@@ -1,11 +1,10 @@
 @extends ('layouts.app')
 @section('content')
-<div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                <!--tabla-->
-                <table class="table table-info">
+<div class="py-12 bg-blue-400">
+<br>
+
+      <!--tabla-->
+      <table class="table table-info letra">
                     <thead>
                 <tr>
                     <th scope="col">No</th>
@@ -19,6 +18,7 @@
                     <th scope="col">Nombre Sucesor</th>
                     <th scope="col">Apellido Sucesor</th>
                     <th scope="col">Cedula Sucesor</th>
+                    <th scope="col">Titulo</th>
                 </tr>
                     </thead>
                         <tbody>
@@ -40,14 +40,22 @@
                             <td> {{ $c->sunom}}</td>
                             <td> {{ $c->suape}}</td>
                             <td> {{ $c->suced}}</td>
+                            <td><a href="{{route('descargas', $c->archivo)}}" 
+                             class="btn btn-success" download="titulo">
+                              Descargar 
+                             </a>
+                             </td>
                         <!---->
                         </tr>
                             @endforeach
                         </tbody>
                 </table>
                 <!--end table-->
-                </div>
-            </div>
-        </div>
-    </div>
+                <br>
+                <style>
+                  .letra{
+                      font-size:12px;
+                  }
+                </style>
+      </div>
 @stop

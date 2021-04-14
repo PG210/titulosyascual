@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-indigo-600 border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-green-400 border-b border-gray-500">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-2">
         <div class="flex justify-between h-16">
@@ -24,13 +24,13 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     
-                    <x-nav-link class="text-lg hover:text-gray-100" :href="url('/dashboard')" :active="request()->routeIs('dashboard')">
-                       <b> {{__('Inicio') }}</b>
+                    <x-nav-link class="text-lg text-gray-900 hover:text-gray-100 no-underline" :href="url('/dashboard')">
+                       <b> Inicio</b>
                     </x-nav-link>
-                    <x-nav-link  class="text-lg hover:text-gray-100" :href="route('titulos')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link  class="text-lg text-gray-900 hover:text-gray-100 no-underline" :href="route('titulos')" >
                         <b>{{ __('Titulos') }}</b>
                     </x-nav-link>
-                    <x-nav-link  class="text-lg hover:text-gray-100" :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link  class="text-lg text-gray-900 hover:text-gray-100 no-underline" :href="route('busqueda')">
                        <b> {{ __('Buscar') }}</b>
                     </x-nav-link>
                     <!--desplegue-->
@@ -50,22 +50,22 @@
 
                     <x-slot name="content">
                         <!-- Authentication -->
-                            <x-dropdown-link href="{{route('titular')}}">
+                            <x-dropdown-link  class="no-underline" href="{{route('titular')}}">
                             {{ __('Titular') }}
                             </x-dropdown-link>
-                            <x-dropdown-link href="{{route('sucesor')}}">
+                            <x-dropdown-link  class="no-underline" href="{{route('sucesor')}}">
                             {{ __('Sucesor') }}
                             </x-dropdown-link>
-                            <x-dropdown-link href="{{route('vereda')}}">
+                            <x-dropdown-link  class="no-underline" href="{{route('vereda')}}">
                             {{ __('Vereda') }}
                             </x-dropdown-link>
-                            <x-dropdown-link href="{{route('predio')}}">
+                            <x-dropdown-link  class="no-underline" href="{{route('predio')}}">
                             {{ __('Predio') }}
                             </x-dropdown-link>
-                            <x-dropdown-link href="{{route('carpeta')}}">
+                            <x-dropdown-link  class="no-underline" href="{{route('carpeta')}}">
                             {{ __('Carpeta') }}
                             </x-dropdown-link>
-                            <x-dropdown-link href="{{route('caja')}}">
+                            <x-dropdown-link  class="no-underline" href="{{route('caja')}}">
                             {{ __('Caja') }}
                             </x-dropdown-link>
                        </x-slot>
@@ -126,7 +126,7 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Titulos') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+            <x-responsive-nav-link :href="route('busqueda')" :active="request()->routeIs('dashboard')">
                 {{ __('Buscar') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('titular')" :active="request()->routeIs('dashboard')">
