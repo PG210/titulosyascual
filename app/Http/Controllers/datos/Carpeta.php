@@ -19,7 +19,7 @@ class Carpeta extends Controller
         $category->numero = $request->input('num');
         $category->idtitulo = $request->input('titulo');
         $category->save();
-        //return redirect()->route('actucliente');
+        return redirect()->route('carpeta');
     } 
 
 }

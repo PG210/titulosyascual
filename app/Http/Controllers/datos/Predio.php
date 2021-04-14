@@ -18,7 +18,8 @@ class Predio extends Controller
         $var=Titular::all();
         $s=Sucesores::all();
         $vereda=Veredas::all();
-       return view('predio.predio', compact('var', 's', 'vereda'));
+        $pre=Predios::all();
+        return view('predio.predio', compact('var', 's', 'vereda', 'pre'));
     } 
 
     public function  registro(Request $request)
@@ -45,7 +46,7 @@ class Predio extends Controller
         }
         $category->archivo = $val;//ingresa el nombre de la ruta a la base de datos 
         $category->save();//guarda los datos 
-        //return redirect()->route('actucliente');
+        return redirect()->route('predio');
     } 
     public function visualizar(){
         $tit=Cajas::join('carpeta', 'idcarpeta', '=', 'carpeta.id')

@@ -31,8 +31,6 @@ Route::get('titulos/registro/titulares', [Titulares::class, 'index'])->name('tit
 Route::get('titulos/titulares/busqueda', [Buscar::class, 'index'])->name('busqueda');
 //buscar titular
 Route::post('titulos/titulares/busqueda', [Buscar::class, 'bustitular'])->name('bus');
-//buscar sucesor
-//Route::post('titulos/sucesores/busqueda', [Buscar::class, 'bussucesor'])->name('busucesor');
 //registro sucesor
 Route::get('titulos/registro/sucesores', [Sucesor::class, 'index'])->name('sucesor');
 //registro vereda

@@ -18,7 +18,7 @@ class Vereda extends Controller
         $category = new Veredas();
         $category->descripcion = $request->input('des');
         $category->save();
-        //return redirect()->route('actucliente');
+        return redirect()->route('vereda');
     } 
 
 }

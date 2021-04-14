@@ -20,7 +20,7 @@ class Caja extends Controller
         $category->numero = $request->input('num');
         $category->idcarpeta = $request->input('titulo');
         $category->save();
-        //return redirect()->route('actucliente');
+        return redirect()->route('caja');
     } 
 
 }

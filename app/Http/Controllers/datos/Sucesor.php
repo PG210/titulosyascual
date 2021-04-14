@@ -24,7 +24,7 @@ class Sucesor extends Controller
         $category->direccion = $request->input('dir');
         $category->telefono = $request->input('tel');
         $category->save();
-        //return redirect()->route('actucliente');
+        return redirect()->route('sucesor');
     } 
 
 }

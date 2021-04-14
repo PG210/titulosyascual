@@ -24,7 +24,7 @@
                       </select>
                       </div>
                    <div class="col-md-3">
-                    <label for="validationDefault03" class="form-label">Cedula</label>
+                    <label for="validationDefault03" class="form-label">No Documento</label>
                       <input type="number" class="form-control" id="cedula" name="cedula" required>
                     </div>
                     <div class="col-md-6">
